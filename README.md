@@ -7,7 +7,7 @@ Run the container
 The container needs privileged rights to be able to update the hosts time. So an example run statement is:
 
 ```shell
-docker run --privileged --restart=always -d cguenther/ntpd -t ntpd
+docker run --cap-add SYS_TIME --restart=always -d cguenther/ntpd -t ntpd
 ```
 
 This statement creates a container named ntpd from the cguenther/ntpd image privileged and detached (-d) mode and resarts it always.
